@@ -1,39 +1,294 @@
 ---
-import Layout from '../layouts/Page.astro';
-import Container from '../components/Container.astro';
-
+import Layout from "../layouts/Page.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import HeroBackground from "/assets/home-hero-bg.jpeg";
+import HeroIllustration from "/assets/home-hero-illustration.svg";
+import AmbientalCardBg from "/assets/img_ambiental.png";
+import SocialCardBg from "/assets/img_social.png";
+import GovernancaCardBg from "/assets/img_governanca.png";
+import ContentIllustration from "/assets/content-illustration.svg";
+import { getFourLatestPosts } from "../lib/api";
+import { formatBlogPostDate, getSanityImageURL } from "../utils/helpers";
 
 const seo = {
   title: "Astro Minimal Starter",
-  description: "This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support."
-}
+  description:
+    "This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.",
+};
+
+const fourPostsData = await getFourLatestPosts();
 ---
 
 <Layout seo={seo}>
-  <Container>
-    <h1>Astro Sanity Minimal Starter</h1>
-    
-    <p>
-      If you haven't heard about <a href="https://astro.build">Astro</a> yet you're missing out. This starter repo gives you a blog website with a headless CMS setup using <a href="https://sanity.io">Sanity.io</a>.</p>
+  <Header />
+  <div class="mt-20">
+    <section class="w-full h-full relative">
+      <img
+        src={HeroBackground}
+        class="absolute inset-0 object-cover w-full h-full"
+        alt=""
+      />
+      <div class="relative bg-gray-800 bg-opacity-50">
+        <svg
+          class="absolute inset-x-0 -bottom-1 text-white"
+          viewBox="0 0 1160 163"
+        >
+          <path
+            fill="currentColor"
+            d="M-164 13L-104 39.7C-44 66 76 120 196 141C316 162 436 152 556 119.7C676 88 796 34 916 13C1036 -8 1156 2 1216 7.7L1276 13V162.5H1216C1156 162.5 1036 162.5 916 162.5C796 162.5 676 162.5 556 162.5C436 162.5 316 162.5 196 162.5C76 162.5 -44 162.5 -104 162.5H-164V13Z"
+          ></path>
+        </svg>
+        <div
+          class="relative px-4 py-16 mx-auto overflow-hidden sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 lg:py-20"
+        >
+          <div class="flex flex-col items-center justify-between xl:flex-row">
+            <div class="w-full mb-12 xl:mb-0">
+              <h2
+                class="w-full mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-6xl sm:leading-none"
+              >
+                A WPX está transformando o setor de locação de Máquinas
+              </h2>
+              <p class="max-w-xl mb-4 text-base text-gray-200 md:text-lg">
+                Descubra como a WPX está liderando a sustentabilidade e
+                responsabilidade social
+              </p>
+              <div class="flex flex-col gap-4 sm:flex-row sm:justify-start">
+                <a
+                  href="#"
+                  class="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
+                  >Baixe nosso Arquivo</a
+                >
+                <a
+                  href="/blog"
+                  class="inline-block rounded-lg bg-primaryBlue px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-secondaryBlue focus-visible:ring active:bg-secondaryBlue md:text-base"
+                  >Veja Nossos Posts</a
+                >
+              </div>
+            </div>
+            <div class="hidden lg:block w-full xl:px-0 mt-10">
+              <img
+                src={HeroIllustration}
+                class="w-50 h-30"
+                alt="Ilustração WPX ESG"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="py-12">
+        <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+          <div class="mb-12 space-y-2 text-center">
+            <h2
+              class="text-3xl font-bold text-primaryBlue md:text-4xl dark:text-white"
+            >
+              Práticas Sustentáveis
+            </h2>
+            <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">
+              Somos uma empresa que acredita em equilibrar práticas ambientais e
+              investimentos e temos a certeza de que a construção de um futuro
+              inovador e sustentável começa hoje. Adotamos as práticas de ESG na
+              empresa por acreditar na verdadeira mudança de paradigma nas
+              relações comerciais.
+            </p>
+          </div>
+          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div
+              class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10"
+            >
+              <div class="relative overflow-hidden rounded-xl">
+                <img
+                  src={AmbientalCardBg}
+                  alt="Card Ambiental plano de fundo"
+                  loading="lazy"
+                  class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div class="mt-6 relative">
+                <h3
+                  class="text-2xl font-semibold text-primaryBlue dark:text-white"
+                >
+                  WPX Ambiental
+                </h3>
+                <p class="mt-6 mb-8 text-gray-600 dark:text-gray-300">
+                  Buscamos novas tecnologias tanto em equipamentos e máquinas
+                  como em todos os processos, para reduzir o impacto ambiental,
+                  minimizar desperdícios e manutenções, para aumentar a
+                  eficiência, qualidade e rapidez do nosso trabalho.
+                </p>
+                <a class="inline-block" href="/blog/category/ambiental">
+                  <span class="text-primary">Veja Mais</span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10"
+            >
+              <div class="relative overflow-hidden rounded-xl">
+                <img
+                  src={SocialCardBg}
+                  alt="art cover"
+                  loading="lazy"
+                  class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div class="mt-6 relative">
+                <h3
+                  class="text-2xl font-semibold text-primaryBlue dark:text-white"
+                >
+                  WPX Social
+                </h3>
+                <p class="mt-6 mb-8 text-gray-600 dark:text-gray-300">
+                  Estamos comprometidos com a diversidade de nossas equipes e
+                  com a igualdade de oportunidades e de tratamento, para
+                  desenvolver e criar um ambiente de colaboração, ética,
+                  inovação, empatia e equidade.
+                </p>
+                <a class="inline-block" href="/blog/category/social">
+                  <span class="text-primary">Veja mais</span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10"
+            >
+              <div class="relative overflow-hidden rounded-xl">
+                <img
+                  src={GovernancaCardBg}
+                  alt="art cover"
+                  loading="lazy"
+                  class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div class="mt-6 relative">
+                <h3
+                  class="text-2xl font-semibold text-primaryBlue dark:text-white"
+                >
+                  WPX Governança
+                </h3>
+                <p class="mt-6 mb-8 text-gray-600 dark:text-gray-300">
+                  Dentro da nossa cadeia corporativa inserimos integridade,
+                  honestidade, responsabilidade, empatia, inovação e qualidade
+                  como valores fundamentais.
+                </p>
+                <a class="inline-block" href="/blog/category/governanca">
+                  <span class="text-primary">Veja mais</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="dark:bg-gray-800 dark:text-gray-100">
+      <div
+        class="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between"
+      >
+        <div
+          class="flex items-center justify-center p-6 mt-8 lg:mt-0 w-full h-full"
+        >
+          <img
+            src={ContentIllustration}
+            alt=""
+            class="object-contain w-50 h-[50vh]"
+          />
+        </div>
+        <div
+          class="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left"
+        >
+          <h1 class="text-5xl font-bold leading-none text-primaryBlue">
+            Liderança em Sustentabilidade e Responsabilidade Social na Locação
+            de Máquinas e Tratores.
+          </h1>
+          <p class="mt-6 mb-8 text-lg sm:mb-12 text-gray-600">
+            Descubra como a WPX está inovando no setor de locação de máquinas e
+            tratores com um forte compromisso em promover práticas sustentáveis
+            e responsabilidade social em todos os aspectos de suas operações.
+          </p>
+          <div
+            class="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start"
+          >
+            <div class="flex flex-col gap-4 sm:flex-row sm:justify-start">
+              <a
+                href="/about"
+                class="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
+                >Sobre a WPX</a
+              >
+              <a
+                href="https://wpxlocacao.com.br"
+                target="_blank"
+                class="inline-block rounded-lg bg-primaryBlue px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-secondaryBlue focus-visible:ring active:bg-secondaryBlue md:text-base"
+                >Visite nosso site</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="bg-white py-6 sm:py-8 lg:py-12">
+        <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+          <!-- text - start -->
+          <div class="mb-10 md:mb-16">
+            <h2
+              class="mb-4 text-center text-2xl font-bold text-primaryBlue md:mb-6 lg:text-3xl"
+            >
+              Blog WPX
+            </h2>
 
-    <p>
-      Don't be fooled by the simplicity of this starter either. With excellent SEO built in, Astro's excellent developer environment, and performance best practices you're getting one of the best foundations for a personal blog with posts written in markdown. The reason for making such a bare bones starter in terms of styles is that it has what you need out of the box for SEO and site structure but it makes no assumptions about how you want it look and behave.
-    </p>
+            <p
+              class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg"
+            >
+              Descubra o nosso blog ESG e acompanhe as últimas notícias,
+              tendências e insights sobre sustentabilidade, responsabilidade
+              social e governança corporativa na indústria de locação de
+              máquinas e tratores, com a perspectiva inovadora da WPX.
+            </p>
+          </div>
+          <!-- text - end -->
 
-    <p>Sometimes starters can feel like they are giving us way too much and you'll spend a day picking apart half of the code to get to the setup you actually wanted. Want to use vanilla CSS instead of Tailwind or Scss? No problem!</p>
+          <div
+            class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8"
+          >
+            <!-- article - start -->
+            {
+              fourPostsData.map((post) => (
+                <div class="group relative flex h-48 flex-col overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-64 xl:h-96">
+                  {post.mainImage && (
+                    <img
+                      loading="lazy"
+                      src={getSanityImageURL(post.mainImage).url()}
+                      class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                    />
+                  )}
 
-    <h2>Features</h2>
-    <ul>
-      <li>A customizable headless CMS with <a href="https://sanity.io">Sanity.io</a></li>
-      <li>Excellent SEO Built In</li>
-      <li>Open Graph Tags (Twitter, Facebook, etc.)</li>
-      <li>User Declared Canonical URLs</li>
-      <li>RSS Feed</li>
-      <li>XML Sitemap</li>
-      <li>Robots.txt</li>
-      <li>JSON LD Schema</li>
-    </ul>
+                  <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 to-transparent md:via-transparent" />
 
-    <a href="/blog">Blog →</a>
-  </Container>
+                  <div class="relative mt-auto p-4">
+                    <span class="block text-sm text-gray-200">
+                      {formatBlogPostDate(post._createdAt)}
+                    </span>
+                    <h2 class="mb-2 text-xl font-semibold text-white transition duration-100">
+                      {post.title}
+                    </h2>
+                    <a href={`/blog/${post.slug.current}`}>
+                      <span class="font-semibold text-white">Veja mais</span>
+                    </a>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="sm:px-20 sm:py-10">
+      <div class="elfsight-app-fadea555-1a25-4bb6-92ab-0d6dcb42ae03"></div>
+    </div>
+  </div>
+  <Footer />
+  <script is:inline src="https://apps.elfsight.com/p/platform.js" defer
+  ></script>
 </Layout>

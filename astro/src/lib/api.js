@@ -6,6 +6,13 @@ export async function getAllPosts() {
   return data;
 }
 
+export async function getFourLatestPosts() {
+  const query = `*[_type == 'post']{"categoryData": categories[]->{slug, title},author -> {name}, ...} | order(publishedAt desc)`;
+  const data = await useSanityClient().fetch(query);
+  const latestPosts = data.slice(0, 4);
+  return latestPosts;
+}
+
 export async function getAllCategoriesWithPosts() {
   const query = `*[_type == 'category']{"posts": *[_type == "post" && references(^._id)] | order(publishedAt desc), ...}`;
   const data = await useSanityClient().fetch(query);

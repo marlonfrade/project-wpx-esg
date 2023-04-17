@@ -1,0 +1,333 @@
+---
+import Layout from "../layouts/Page.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import VideoBg from "/assets/hero-video-wpx.mp4";
+import WpxAboutBg from "/assets/wpx-about.jpeg";
+
+const seo = {
+  title: "Sobre a WPX",
+  description:
+    "Ex anim fugiat cillum occaecat dolor minim sit exercitation consectetur ut laborum ea magna cillum nulla.",
+};
+---
+
+<Layout seo={seo}>
+  <Header />
+  <div class="w-full h-full my-20">
+    <section>
+      <div class="bg-primaryBlue">
+        <div
+          class="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 text-gray-900"
+        >
+          <h1
+            class="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl text-gray-50"
+          >
+            A escolha certa em locação de equipamentos e máquinas pesadas!
+          </h1>
+          <p class="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl text-gray-50">
+            Equipe especializada, com larga experiência e com Know How em
+            terceirização de frota, a WPX conta com equipamentos modernos, e com
+            uma equipe responsável.
+          </p>
+          <div class="flex flex-wrap justify-center">
+            <button
+              type="button"
+              class="px-8 py-3 m-2 text-lg font-semibold rounded bg-gray-100 text-gray-900"
+              >Visite Nosso Site!</button
+            >
+            <!-- <button
+              type="button"
+              class="px-8 py-3 m-2 text-lg border rounded border-gray-300 text-gray-50"
+              >Learn more</button
+            > -->
+          </div>
+        </div>
+      </div>
+      <video
+        class="w-5/6 mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-40 bg-gray-500"
+        loop
+        autoplay
+        muted
+      >
+        <source src={VideoBg} type="video/mp4" />
+      </video>
+    </section>
+    <div class="bg-white py-6 sm:py-8 lg:py-12">
+      <div class="mx-auto max-w-screen-xl px-4 md:px-8">
+        <!-- text - start -->
+        <div class="mb-10 md:mb-16">
+          <h2
+            class="mb-4 text-center text-2xl font-bold text-primaryBlue md:mb-6 lg:text-3xl"
+          >
+            ESTAMOS CRIANDO O FUTURO DO SETOR!
+          </h2>
+
+          <p
+            class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg"
+          >
+            Investimentos em tecnologia e desenvolvimento de sistemas de gestão
+            de processos logísticos e sustentáveis são o foco atual da WPX.
+          </p>
+        </div>
+        <!-- text - end -->
+
+        <div class="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-0 md:divide-x">
+          <!-- stat - start -->
+          <div class="flex flex-col items-center md:p-4">
+            <div
+              class="text-xl font-bold text-primaryBlue sm:text-2xl md:text-3xl"
+            >
+              200+
+            </div>
+            <div class="text-sm font-semibold sm:text-base">
+              Obras Atendidas
+            </div>
+          </div>
+          <!-- stat - end -->
+
+          <!-- stat - start -->
+          <div class="flex flex-col items-center md:p-4">
+            <div
+              class="text-xl font-bold text-primaryBlue sm:text-2xl md:text-3xl"
+            >
+              500+
+            </div>
+            <div class="text-sm font-semibold sm:text-base">
+              Máquinas e Veículos
+            </div>
+          </div>
+
+          <!-- stat - start -->
+          <div class="flex flex-col items-center md:p-4">
+            <div
+              class="text-xl font-bold text-primaryBlue sm:text-2xl md:text-3xl"
+            >
+              200+
+            </div>
+            <div class="text-sm font-semibold sm:text-base">
+              Milhões Investidos
+            </div>
+          </div>
+          <!-- stat - end -->
+
+          <!-- stat - start -->
+          <div class="flex flex-col items-center md:p-4">
+            <div
+              class="text-xl font-bold text-primaryBlue sm:text-2xl md:text-3xl"
+            >
+              Mineração Pesada
+            </div>
+            <div class="text-sm font-semibold sm:text-base">
+              Máquinas Florestais
+            </div>
+          </div>
+          <!-- stat - end -->
+        </div>
+      </div>
+    </div>
+    <div class="bg-white py-6 sm:py-8 lg:py-12">
+      <div class="mx-auto max-w-screen-xl px-4 md:px-8">
+        <div class="grid gap-8 md:grid-cols-2 lg:gap-12">
+          <div>
+            <div
+              class="h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto"
+            >
+              <img
+                src={WpxAboutBg}
+                loading="lazy"
+                alt="Photo by Martin Sanchez"
+                class="h-full w-full object-cover object-center"
+              />
+            </div>
+          </div>
+
+          <div class="md:pt-8">
+            <p class="text-center font-bold text-primaryBlue md:text-left">
+              Confiança
+            </p>
+
+            <h1
+              class="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6 md:text-left"
+            >
+              Logística com eficiência que gera Economia
+            </h1>
+
+            <p class="mb-6 text-gray-500 sm:text-lg md:mb-8">
+              A WPX possui equipe especializada com engenheiros, mecânicos e
+              assessoria administrativa, gerando adequações importantes e
+              excelência na entrega da obra. <br /><br />
+
+              Além de oferecer terceirização de frota para empresas e órgãos
+              públicos de acordo com a necessidade e tempo para atender a
+              demanda. <a
+                href="https://www.wpxlocacao.com.br/"
+                target="_blank"
+                class="text-primaryBlue underline transition duration-100 hover:text-indigo-600 active:text-indigo-700"
+                >A locação de maquinários</a
+              > e equipamentos para obras e veículos de mobilidade urbana, é uma
+              forma eficaz de reduzir custos e otimizar tempo. Opera em todo o Brasil
+              com equipe especializada prestando assessoria completa nos mais variados
+              segmentos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="my-20 bg-gray-100 text-primaryBlue">
+      <div
+        class="container flex flex-col items-center mx-auto mb-12 md:p-10 md:px-12"
+      >
+        <h1 class="p-4 text-5xl font-bold leading-none sm:text-6xl text-center">
+          Veja o que dizem sobre a #WPX!
+        </h1>
+      </div>
+      <div
+        class="container flex flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10 lg:pb-20"
+      >
+        <div class="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
+          <div class="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 bg-gray-50">
+            <p
+              class="relative px-6 py-1 text-lg italic text-center text-gray-800"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="currentColor"
+                class="w-8 h-8 text-primaryBlue"
+              >
+                <path
+                  d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"
+                ></path>
+                <path
+                  d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"
+                ></path>
+              </svg>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Voluptatibus quibusdam, eligendi exercitationem molestias possimus
+              facere.
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="currentColor"
+                class="absolute right-0 w-8 h-8 text-primaryBlue"
+              >
+                <path
+                  d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"
+                ></path>
+                <path
+                  d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"
+                ></path>
+              </svg>
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center justify-center p-8 rounded-b-lg bg-primaryBlue text-gray-50"
+          >
+            <img
+              src="https://source.unsplash.com/50x50/?portrait?1"
+              alt=""
+              class="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full"
+            />
+            <p class="text-xl font-semibold leading-tight">Distinctio Animi</p>
+            <p class="text-sm uppercase">Aliquam illum</p>
+          </div>
+        </div>
+        <div class="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
+          <div class="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 bg-gray-50">
+            <p
+              class="relative px-6 py-1 text-lg italic text-center text-gray-800"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="currentColor"
+                class="w-8 h-8 text-primaryBlue"
+              >
+                <path
+                  d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"
+                ></path>
+                <path
+                  d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"
+                ></path>
+              </svg>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Voluptatibus quibusdam, eligendi exercitationem molestias possimus
+              facere.
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="currentColor"
+                class="absolute right-0 w-8 h-8 text-primaryBlue"
+              >
+                <path
+                  d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"
+                ></path>
+                <path
+                  d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"
+                ></path>
+              </svg>
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center justify-center p-8 rounded-b-lg bg-primaryBlue text-gray-50"
+          >
+            <img
+              src="https://source.unsplash.com/50x50/?portrait?2"
+              alt=""
+              class="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full"
+            />
+            <p class="text-xl font-semibold leading-tight">Distinctio Animi</p>
+            <p class="text-sm uppercase">Aliquam illum</p>
+          </div>
+        </div>
+        <div class="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
+          <div class="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 bg-gray-50">
+            <p
+              class="relative px-6 py-1 text-lg italic text-center text-gray-800"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="currentColor"
+                class="w-8 h-8 text-primaryBlue"
+              >
+                <path
+                  d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"
+                ></path>
+                <path
+                  d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"
+                ></path>
+              </svg>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Voluptatibus quibusdam, eligendi exercitationem molestias possimus
+              facere.
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="currentColor"
+                class="absolute right-0 w-8 h-8 text-primaryBlue"
+              >
+                <path
+                  d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"
+                ></path>
+                <path
+                  d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"
+                ></path>
+              </svg>
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center justify-center p-8 rounded-b-lg bg-primaryBlue text-gray-50"
+          >
+            <img
+              src="https://source.unsplash.com/50x50/?portrait?3"
+              alt=""
+              class="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full"
+            />
+            <p class="text-xl font-semibold leading-tight">Distinctio Animi</p>
+            <p class="text-sm uppercase">Aliquam illum</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+<Footer />

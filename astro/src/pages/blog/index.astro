@@ -1,61 +1,79 @@
 ---
 // Component Imports
-import Layout from '../../layouts/Page.astro'
-import BlogPostPreview from '../../components/BlogPostPreview.astro';
+import Layout from "../../layouts/Page.astro";
+import BlogPostPreview from "../../components/BlogPostPreview.astro";
+import HeroBackground from "/assets/blog-hero-bg.jpeg";
 
-import { getAllPosts } from '../../lib/api.js';
-import Container from '../../components/Container.astro';
-
+import { getAllPosts } from "../../lib/api.js";
+import Container from "../../components/Container.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 
 const seo = {
-  title: 'Example Blog',
-  description: 'This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.'
-}
+  title: "Example Blog",
+  description:
+    "This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.",
+};
 
 const allPostData = await getAllPosts();
-
 ---
 
 <Layout seo={seo}>
+  <Header />
+  <section class="w-full h-full relative">
+    <img
+      src={HeroBackground}
+      class="absolute inset-0 object-cover w-full h-full"
+      alt=""
+    />
+    <div class="relative bg-gray-800 bg-opacity-50">
+      <svg
+        class="absolute inset-x-0 -bottom-1 text-white"
+        viewBox="0 0 1160 163"
+      >
+        <path
+          fill="currentColor"
+          d="M-164 13L-104 39.7C-44 66 76 120 196 141C316 162 436 152 556 119.7C676 88 796 34 916 13C1036 -8 1156 2 1216 7.7L1276 13V162.5H1216C1156 162.5 1036 162.5 916 162.5C796 162.5 676 162.5 556 162.5C436 162.5 316 162.5 196 162.5C76 162.5 -44 162.5 -104 162.5H-164V13Z"
+        ></path>
+      </svg>
+      <div
+        class="relative h-full flex justify-center items-center px-4 py-16 mx-auto overflow-hidden sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 lg:py-20 min-h-[80vh]"
+      >
+        <div class="flex flex-col items-center justify-between xl:flex-row">
+          <div class="w-full mb-12 xl:mb-0">
+            <h2
+              class="w-full md:w-[80%] mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-6xl sm:leading-none"
+            >
+              WPX em Ação: Conheça as Iniciativas Sustentáveis que Estamos
+              Desenvolvendo!
+            </h2>
+            <p class="max-w-xl mb-4 text-base text-gray-200 md:text-lg">
+              Com práticas sustentáveis, a WPX está sempre em ação para cuidar
+              do planeta e construir um futuro melhor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="my-12 space-y-2 text-center">
+    <h2 class="text-3xl font-bold text-primaryBlue md:text-4xl dark:text-white">
+      Veja Nossas Ações
+    </h2>
+    <p class="text-gray-600 dark:text-gray-300 lg:mx-auto lg:w-6/12">
+      Acompanhe todos nossos passos a caminho de um mundo melhor para todos!
+    </p>
+  </div>
   <Container>
-    <article class="blog-page-content__article">
-      <section class="postlist">
-        {allPostData.map((post) =>
-        <BlogPostPreview post={post} />)}
+    <article>
+      <section class="grid gap-8 md:grid-cols-2 my-20">
+        {allPostData.map((post) => <BlogPostPreview post={post} />)}
       </section>
     </article>
   </Container>
+  <Footer />
 </Layout>
 
 <style is:global>
   /* Posts list */
-  .postlist {
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    list-style: none;
-    padding: 0;
-
-  }
-
-  .postlist-item {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .postlist-item__img {
-    border-radius: 0.5rem;
-    height: auto;
-  }
-
-  @media screen and (max-width: 769px) {
-    .blog-page-content__article {
-      padding: 1rem;
-    }
-
-    .postlist {
-      grid-template-columns: 1fr;
-    }
-  }
 </style>

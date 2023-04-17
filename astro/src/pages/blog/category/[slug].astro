@@ -1,26 +1,56 @@
 ---
 // Component Imports
-import Layout from '../../../layouts/Page.astro'
-import BlogPostPreview from '../../../components/BlogPostPreview.astro'
+import Layout from "../../../layouts/Page.astro";
+import BlogPostPreview from "../../../components/BlogPostPreview.astro";
 
-import { getAllCategoriesWithPosts } from '../../../lib/api.js';
+import { getAllCategoriesWithPosts } from "../../../lib/api.js";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
 
 export async function getStaticPaths() {
   const allCategoryData = await getAllCategoriesWithPosts();
 
-  return allCategoryData.map(category => ({params: { slug: category.slug.current }, props: {category}}));
+  return allCategoryData.map((category) => ({
+    params: { slug: category.slug.current },
+    props: { category },
+  }));
 }
 
 const { category } = Astro.props;
 
 const seo = {
   title: category.title,
-}
+};
 ---
 
-<Layout seo={seo} >
-    <h1>All Posts Tagged with "{category.title}"</h1>
-    {category.posts.map((post) => (
-       <BlogPostPreview post={post} />
-    ))}
+<Layout seo={seo}>
+  <Header />
+  <div
+    class="mt-40 mx-auto max-w-screen-2xl rounded-lg bg-gray-100 px-4 py-6 md:py-8 lg:py-12"
+  >
+    <p
+      class="mb-2 text-center font-semibold text-primaryBlue md:mb-3 lg:text-lg"
+    >
+      Posts Selecionados pela categoria
+    </p>
+
+    <h2
+      class="mb-4 mx-auto max-w-3xl text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-5xl"
+    >
+      {category.title}
+    </h2>
+  </div>
+  <div class="w-fit mx-auto my-10 flex space-x-2">
+    <div class="h-0.5 w-2 bg-gray-600 dark:bg-white"></div>
+    <div class="h-0.5 w-32 bg-gray-600 dark:bg-white"></div>
+    <div class="h-0.5 w-2 bg-gray-600 dark:bg-white"></div>
+  </div>
+  <div class="mb-40 mx-auto max-w-screen-xl px-4 md:px-8">
+    <div
+      class="grid gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-2 xl:grid-cols-2 xl:gap-16"
+    >
+      {category.posts.map((post) => <BlogPostPreview post={post} />)}
+    </div>
+  </div>
+  <Footer />
 </Layout>

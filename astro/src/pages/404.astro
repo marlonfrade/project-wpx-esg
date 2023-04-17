@@ -1,18 +1,63 @@
 ---
-import Layout from '../layouts/Page.astro';
-import Container from '../components/Container.astro';
+import Layout from "../layouts/Page.astro";
+import Container from "../components/Container.astro";
+import Footer from "../components/Footer.astro";
+import Bg404 from "/assets/bg-404.jpeg";
 
 const seo = {
-  title: 'Uh Oh! Page Not Found',
-  description: 'This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.',
-}
-
+  title: "Ops! Página não encontrada",
+  description: "",
+};
 ---
 
-<Layout seo={seo} >
-    <Container>
-    <h1>404</h1>
-    <p>Uh Oh! We couldn't find the page you were looking for</p>
-    <a href="/">Return Home</a>
-    </Container>
+<Layout seo={seo}>
+  <Container>
+    <div class="bg-white py-6 sm:py-8 lg:py-12 lg:mb-40">
+      <div class="mx-auto max-w-screen-lg px-4 md:px-8">
+        <div class="grid gap-8 sm:grid-cols-2">
+          <!-- content - start -->
+          <div
+            class="flex flex-col items-center justify-center sm:items-start md:py-24 lg:py-32"
+          >
+            <p
+              class="mb-4 text-sm font-semibold uppercase text-primaryBlue md:text-5xl"
+            >
+              404
+            </p>
+            <h1
+              class="mb-2 text-center text-2xl font-bold text-gray-800 sm:text-left md:text-3xl"
+            >
+              Página não encontrada
+            </h1>
+
+            <p class="mb-8 text-center text-gray-500 sm:text-left md:text-lg">
+              A página que você procura ainda não existe, clique abaixo para
+              retornar a página inicial.
+            </p>
+
+            <a
+              href="/"
+              class="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
+              >Página Inicial</a
+            >
+          </div>
+          <!-- content - end -->
+
+          <!-- image - start -->
+          <div
+            class="relative h-80 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto"
+          >
+            <img
+              src={Bg404}
+              loading="lazy"
+              alt="Photo by @heydevn"
+              class="absolute inset-0 h-full w-full object-cover object-left"
+            />
+          </div>
+          <!-- image - end -->
+        </div>
+      </div>
+    </div>
+  </Container>
+  <Footer />
 </Layout>

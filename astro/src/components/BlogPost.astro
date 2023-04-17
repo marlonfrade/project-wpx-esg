@@ -1,34 +1,244 @@
 ---
-import SanityPortableText from './SanityPortableText.astro'
-import { getSanityImageURL, formatBlogPostDate } from '../utils/helpers.js'
-import Container from './Container.astro';
+import SanityPortableText from "./SanityPortableText.astro";
+import { getSanityImageURL, formatBlogPostDate } from "../utils/helpers.js";
+import { getFourLatestPosts } from "../lib/api";
+import BlogPostPreview from "./BlogPostPreview.astro";
 
 export interface Props {
   post: any;
 }
 
 const { post } = Astro.props;
+const fourPostData = await getFourLatestPosts();
 // const blogPostBody = await convertBlockContentToMarkdown(post.bodyRaw);
 ---
 
-<Container>
-  <article class="post-content__article">
-      {post.mainImage && <img width="720" height="420" class="post-main__img" loading="lazy" src={getSanityImageURL(post.mainImage).url()} />}
-      <h1>{post.title}</h1>
-      <time>{formatBlogPostDate(post.publishedAt)}</time>
-      {post.author && <p>By {post.author.name}</p>}
-      <SanityPortableText portableText={post.body} />
-  </article>
-</Container>
+<article>
+  <!-- Blog Intro Start -->
+  <div class="bg-white py-6 sm:py-8 lg:py-12">
+    <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+      <div class="rounded-lg bg-gray-100 px-4 py-6 md:py-8 lg:py-12">
+        <p
+          class="mb-2 text-center font-semibold text-primaryBlue md:mb-3 lg:text-lg"
+        >
+          <time>{formatBlogPostDate(post.publishedAt)}</time>
+        </p>
 
-<style>
-  .post-content__article {
-    padding: 1rem;
+        <h2
+          class="mb-4 mx-auto max-w-3xl text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-5xl"
+        >
+          {post.title}
+        </h2>
+
+        <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+          {post.excerpt}
+        </p>
+        <div class="flex justify-center gap-4">
+          {
+            post.categoryData &&
+              post.categoryData.map((category) => (
+                <a
+                  href={`/blog/category/${category.slug.current}`}
+                  class="px-3 py-1 rounded-full border border-gray-500 text-sm font-medium text-primary transition duration-300 hover:border hover:bg-primary hover:text-primaryBlue hover:border-primaryBlue"
+                >
+                  {category.title}
+                </a>
+              ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Blog Intro End -->
+  <div class="w-fit mx-auto my-10 flex space-x-2">
+    <div class="h-0.5 w-2 bg-gray-600 dark:bg-white"></div>
+    <div class="h-0.5 w-32 bg-gray-600 dark:bg-white"></div>
+    <div class="h-0.5 w-2 bg-gray-600 dark:bg-white"></div>
+  </div>
+  <div class="w-full h-full mx-auto bg-white text-gray-800">
+    <div class="flex flex-col max-w-5xl mx-auto overflow-hidden rounded">
+      {
+        post.mainImage && (
+          <img
+            class="w-full h-full max-h-[60vh]"
+            loading="lazy"
+            src={getSanityImageURL(post.mainImage).url()}
+          />
+        )
+      }
+      <div
+        class="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 sm:p-12 sm:mx-12 lg:rounded-md bg-gray-50"
+      >
+        <div
+          id="article"
+          class="w-full max-w-screen article text-gray-800 space-y-4"
+        >
+          <SanityPortableText portableText={post.body} />
+        </div>
+        <div class="sharethis-sticky-share-buttons"></div>
+      </div>
+    </div>
+    <div class="w-fit mx-auto my-10 flex space-x-2">
+      <div class="h-0.5 w-2 bg-gray-600 dark:bg-white"></div>
+      <div class="h-0.5 w-32 bg-gray-600 dark:bg-white"></div>
+      <div class="h-0.5 w-2 bg-gray-600 dark:bg-white"></div>
+    </div>
+    <div class="mx-auto max-w-screen-xl px-4 md:px-8">
+      <h2
+        class="mb-4 mx-auto max-w-3xl text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-5xl"
+      >
+        Venha ver também!
+      </h2>
+
+      <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+        Confira outros blogs sobre o tema ESG e aprofunde seus conhecimentos!
+        Descubra como empresas podem ser mais sustentáveis e socialmente
+        responsáveis, e como isso pode impactar positivamente o mundo. Clique
+        agora para explorar outros conteúdos relevantes sobre ESG.
+      </p>
+      <div
+        class="grid gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-2 xl:grid-cols-2 xl:gap-16"
+      >
+        {fourPostData.map((post) => <BlogPostPreview post={post} />)}
+      </div>
+    </div>
+  </div>
+</article>
+<script
+  type="text/javascript"
+  src="https://platform-api.sharethis.com/js/sharethis.js#property=64383b83f9186b0019021705&product=sticky-share-buttons&source=platform"
+  async="async"
+></script>
+
+<style is:global>
+  #article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .post-main__img {
+  #article ul,
+  li {
+    align-self: flex-start;
+  }
+
+  #article p,
+  ul,
+  li,
+  ol,
+  h1,
+  h2,
+  h3,
+  h4,
+  blockquote,
+  p {
     width: 100%;
-    height: auto;
+    text-align: start;
+  }
+
+  #article h1 {
+    margin: 5rem 0;
+    font-size: 3.9em;
+    font-weight: 800;
+    line-height: 0.9em;
+    letter-spacing: -0.01em;
+    color: #02448a;
+  }
+
+  #article h2 {
+    margin: 3rem 0;
+    font-size: 2.9em;
+    font-weight: 800;
+    line-height: 0.9em;
+    letter-spacing: -0.01em;
+    color: #02448a;
+  }
+
+  #article h3 {
+    margin: 2rem 0;
+    font-size: 1.9em;
+    font-weight: 800;
+    line-height: 0.9em;
+    letter-spacing: -0.01em;
+    color: #02448a;
+  }
+
+  #article h4 {
+    margin: 1rem 0;
+    font-size: 1.5em;
+    font-weight: 800;
+    line-height: 0.9em;
+    letter-spacing: -0.01em;
+    color: #02448a;
+  }
+
+  #article blockquote {
+    margin: 5rem 0;
+    padding: 30px;
+    width: 500px;
+    background-color: #123068;
+    color: white;
+    box-shadow: 0 5px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: background-color 0.6s linear;
+  }
+
+  #article blockquote:after {
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 100%;
+    border: solid transparent;
+    border-top-color: #123068;
+    border-left-color: #123068;
+    border-width: 10px;
+    left: 10%;
+  }
+
+  #article ul {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  #article ul li {
+    color: #123068;
+    margin: 10px 0;
+    position: relative;
+    cursor: pointer;
+    display: grid;
+    align-items: center;
+    width: fit-content;
+    transition: color 0.3s ease;
+    margin-right: 0px;
+    list-style: circle;
+    display: list-item;
+  }
+
+  #article p {
+  }
+
+  #article a {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #02448a;
+  }
+
+  #article img {
+    width: 100%;
+    max-width: 500px;
+    margin: 5rem 0;
+    border-radius: 5%;
   }
 </style>
-
