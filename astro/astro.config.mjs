@@ -10,12 +10,16 @@ import netlify from "@astrojs/netlify/functions";
 export default defineConfig({
   site: "https://astro-sanity-minimal-starter.netlify.app/",
   // Your public domain, e.g.: https://my-site.dev/
-  integrations: [sitemap(), sanity({
-    projectId: "xi9z9qtm",
-    dataset: "production",
-    apiVersion: "v2023-04-06",
-    useCdn: true
-  }), tailwind()],
-  output: "server",
-  adapter: netlify()
+  integrations: [
+    sitemap(),
+    sanity({
+      projectId: "xi9z9qtm",
+      dataset: "production",
+      apiVersion: "v2023-04-06",
+      useCdn: true,
+    }),
+    tailwind(),
+  ],
+  output: "static",
+  adapter: netlify(),
 });
