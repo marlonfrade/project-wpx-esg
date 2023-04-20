@@ -8,7 +8,7 @@ import netlify from "@astrojs/netlify/functions";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-sanity-minimal-starter.netlify.app/",
+  site: "https://wpxlocacao-esg.netlify.app/",
   // Your public domain, e.g.: https://my-site.dev/
   integrations: [
     sitemap(),
