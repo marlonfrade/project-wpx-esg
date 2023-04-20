@@ -4,6 +4,9 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import VideoBg from "/assets/hero-video-wpx.mp4";
 import WpxAboutBg from "/assets/wpx-about.jpeg";
+import WpxMission from "/assets/wpx-mission.svg";
+import WpxVision from "/assets/wpx-vision.svg";
+import WpxValues from "/assets/wpx-values.svg";
 
 const seo = {
   title: "Sobre a WPX",
@@ -23,18 +26,17 @@ const seo = {
           <h1
             class="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl text-gray-50"
           >
-            A escolha certa em locação de equipamentos e máquinas pesadas!
+            Estamos criando o futuro do Setor.
           </h1>
           <p class="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl text-gray-50">
-            Equipe especializada, com larga experiência e com Know How em
-            terceirização de frota, a WPX conta com equipamentos modernos, e com
-            uma equipe responsável.
+            Investimentos em tecnologia e desenvolvimento de sistemas de gestão
+            de processos logísticos e sustentáveis são o foco atual da WPX.
           </p>
           <div class="flex flex-wrap justify-center">
-            <button
-              type="button"
-              class="px-8 py-3 m-2 text-lg font-semibold rounded bg-gray-100 text-gray-900"
-              >Visite Nosso Site!</button
+            <a
+              href="https://wpxlocacao.com.br"
+              class="px-8 py-3 m-2 text-lg font-semibold rounded bg-gray-100 text-gray-900 cursor-pointer"
+              >Visite Nosso Site!</a
             >
             <!-- <button
               type="button"
@@ -56,7 +58,7 @@ const seo = {
     <div class="bg-white py-6 sm:py-8 lg:py-12">
       <div class="mx-auto max-w-screen-xl px-4 md:px-8">
         <!-- text - start -->
-        <div class="mb-10 md:mb-16">
+        <!-- <div class="mb-10 md:mb-16">
           <h2
             class="mb-4 text-center text-2xl font-bold text-primaryBlue md:mb-6 lg:text-3xl"
           >
@@ -69,57 +71,50 @@ const seo = {
             Investimentos em tecnologia e desenvolvimento de sistemas de gestão
             de processos logísticos e sustentáveis são o foco atual da WPX.
           </p>
-        </div>
+        </div> -->
         <!-- text - end -->
 
-        <div class="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-0 md:divide-x">
+        <div class="grid grid-cols-2 gap-8 md:grid-cols-3 md:gap-0 md:divide-x">
           <!-- stat - start -->
           <div class="flex flex-col items-center md:p-4">
+            <img loading="lazy" src={WpxMission} class="" />
             <div
-              class="text-xl font-bold text-primaryBlue sm:text-2xl md:text-3xl"
+              class="text-xl font-bold text-primaryBlue sm:text-2xl md:text-3xl py-4"
             >
-              200+
+              Missão
             </div>
-            <div class="text-sm font-semibold sm:text-base">
-              Obras Atendidas
+            <div class="text-sm font-semibold sm:text-base text-center">
+              Oferecer a melhor experiência em locação de máquinas pesadas e
+              equipamentos que otimizam o tempo e os custos dos nossos clientes,
+              com tecnologia e inovação.
             </div>
           </div>
           <!-- stat - end -->
 
           <!-- stat - start -->
           <div class="flex flex-col items-center md:p-4">
+            <img loading="lazy" src={WpxVision} class="" />
             <div
-              class="text-xl font-bold text-primaryBlue sm:text-2xl md:text-3xl"
+              class="text-xl font-bold text-primaryBlue sm:text-2xl md:text-3xl py-4"
             >
-              500+
+              Visão
             </div>
-            <div class="text-sm font-semibold sm:text-base">
-              Máquinas e Veículos
+            <div class="text-sm font-semibold sm:text-base text-center">
+              Se tornar referência em empresa que une tecnologia,
+              sustentabilidade e gestão em seus processos.
             </div>
           </div>
 
           <!-- stat - start -->
           <div class="flex flex-col items-center md:p-4">
+            <img loading="lazy" src={WpxValues} class="" />
             <div
-              class="text-xl font-bold text-primaryBlue sm:text-2xl md:text-3xl"
+              class="text-xl font-bold text-primaryBlue sm:text-2xl md:text-3xl py-4"
             >
-              200+
+              Valores
             </div>
-            <div class="text-sm font-semibold sm:text-base">
-              Milhões Investidos
-            </div>
-          </div>
-          <!-- stat - end -->
-
-          <!-- stat - start -->
-          <div class="flex flex-col items-center md:p-4">
-            <div
-              class="text-xl font-bold text-primaryBlue sm:text-2xl md:text-3xl"
-            >
-              Mineração Pesada
-            </div>
-            <div class="text-sm font-semibold sm:text-base">
-              Máquinas Florestais
+            <div class="text-sm font-semibold sm:text-base text-center">
+              Ética, honestidade, transparência, empatia e inovação.
             </div>
           </div>
           <!-- stat - end -->
@@ -183,7 +178,7 @@ const seo = {
         </h1>
       </div>
       <div
-        class="container flex flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10 lg:pb-20"
+        class="container flex flex-col items-center justify-center mx-auto md:flex-row lg:flex-wrap lg:justify-evenly lg:px-10 lg:pb-20"
       >
         <div class="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
           <div class="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 bg-gray-50">

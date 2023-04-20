@@ -7,6 +7,7 @@ import HeroIllustration from "/assets/home-hero-illustration.svg";
 import AmbientalCardBg from "/assets/img_ambiental.png";
 import SocialCardBg from "/assets/img_social.png";
 import GovernancaCardBg from "/assets/img_governanca.png";
+import VideoBg from "/assets/hero-video-wpx.mp4";
 import ContentIllustration from "/assets/content-illustration.svg";
 import { getFourLatestPosts } from "../lib/api";
 import { formatBlogPostDate, getSanityImageURL } from "../utils/helpers";
@@ -186,14 +187,15 @@ const fourPostsData = await getFourLatestPosts();
       <div
         class="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between"
       >
-        <div
-          class="flex items-center justify-center p-6 mt-8 lg:mt-0 w-full h-full"
-        >
-          <img
-            src={ContentIllustration}
-            alt=""
-            class="object-contain w-50 h-[50vh]"
-          />
+        <div class="flex items-center justify-center p-6 lg:mt-0 w-full h-full">
+          <video
+            class="w-5/6 mx-auto mb-12 mt-20 rounded-lg shadow-md bg-gray-500"
+            loop
+            autoplay
+            muted
+          >
+            <source src={VideoBg} type="video/mp4" />
+          </video>
         </div>
         <div
           class="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left"
