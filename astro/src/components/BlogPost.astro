@@ -60,7 +60,7 @@ const fourPostData = await getFourLatestPosts();
       {
         post.mainImage && (
           <img
-            class="w-full h-full max-h-[60vh]"
+            class="w-full h-full"
             loading="lazy"
             src={getSanityImageURL(post.mainImage).url()}
           />

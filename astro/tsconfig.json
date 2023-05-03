@@ -2,5 +2,7 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "experimentalDecorators": true,
-  },
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  }
 }

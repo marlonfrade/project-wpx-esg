@@ -1,43 +1,45 @@
 ---
 import WpxLogo from "/assets/logo.svg";
+import InstagramIcon from "/assets/instagram-icon.svg";
+import LinkedinIcon from "/assets/linkedin-icon.svg";
 ---
 
 <header>
   <nav
-    class="fixed top-0 z-20 w-full bg-white/90 backdrop-blur navbar shadow-2xl shadow-gray-600/5 border-b border-gray-100 peer-checked:navbar-active"
+    class="fixed top-0 z-20 w-full bg-white backdrop-blur navbar shadow-2xl shadow-gray-600/5 border-b border-gray-100"
   >
     <!-- For large and Medium-sized Screen -->
     <div class="flex justify-between items-center mx-auto px-4 py-6">
-      <div class="hidden sm:flex flex-row items-center space-x-6">
-        <a href="https://www.linkedin.com/company/wpx/">
+      <div class="hidden sm:flex flex-row items-center space-x-2">
+        <a href="https://www.linkedin.com/company/wpx/" target="_blank">
           <img
-            class="dark:bg-white p-1 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer"
-            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/header-3-svg3.svg"
-            alt="linkdin"
+            class="w-10 h-10 cursor-pointer"
+            src={LinkedinIcon}
+            alt="linkedin"
           /></a
         >
-        <a href="https://www.instagram.com/wpxlocacao/">
+        <a href="https://www.instagram.com/wpxlocacao/" target="_blank">
           <img
-            class="dark:bg-white p-1 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer"
-            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/header-3-svg4.svg"
+            class="w-10 h-10 cursor-pointer"
+            src={InstagramIcon}
             alt="instagram"
           /></a
         >
       </div>
-      <div class="flex items-center">
-        <a href="/" aria-label="logo" class="sm:ml-[50%] w-20 sm:w-full">
+      <div class="flex flex-1 items-center">
+        <a href="/" aria-label="logo" class="w-20 sm:w-[150px] sm:ml-[50%]">
           <img src={WpxLogo} alt="Logo Wpx" />
         </a>
       </div>
-      <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
+      <div class="flex gap-4 sm:justify-center">
         <a
           href="/about"
-          class="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
+          class="inline-block rounded-lg bg-gray-200 px-4 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
           >A WPX</a
         >
         <a
           href="/blog"
-          class="inline-block rounded-lg bg-primaryBlue px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-secondaryBlue focus-visible:ring active:bg-secondaryBlue md:text-base"
+          class="inline-block rounded-lg bg-primaryBlue px-4 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-secondaryBlue focus-visible:ring active:bg-secondaryBlue md:text-base"
           >Nossas Ações</a
         >
       </div>

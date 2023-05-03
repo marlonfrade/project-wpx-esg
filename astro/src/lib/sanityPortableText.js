@@ -1,5 +1,6 @@
-import { portableTextToHtml } from 'astro-sanity';
-import { getSanityImageURL } from '../utils/helpers.js';
+import getYouTubeId from "get-youtube-id";
+import { portableTextToHtml } from "astro-sanity";
+import { getSanityImageURL } from "../utils/helpers.js";
 
 const customComponents = {
   types: {
@@ -7,7 +8,7 @@ const customComponents = {
       return `
         <picture>
           <source
-            srcset="${getSanityImageURL(value.asset).format('webp').url()}"
+            srcset="${getSanityImageURL(value.asset).format("webp").url()}"
             type="image/webp"
           />
           <img
@@ -22,7 +23,7 @@ const customComponents = {
       return `
         <picture>
           <source
-            srcset="${getSanityImageURL(value.asset).format('webp').url()}"
+            srcset="${getSanityImageURL(value.asset).format("webp").url()}"
             type="image/webp"
           />
           <img
@@ -35,6 +36,11 @@ const customComponents = {
     },
     code: ({ value }) => {
       return `<code-block code='${value.code}' language='${value.language}'></code-block>`;
+    },
+    youtube: ({ value }) => {
+      const { url } = value;
+      const id = getYouTubeId(url);
+      return `<iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
     },
   },
 };

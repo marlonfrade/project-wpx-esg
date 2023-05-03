@@ -8,14 +8,13 @@ import AmbientalCardBg from "/assets/img_ambiental.png";
 import SocialCardBg from "/assets/img_social.png";
 import GovernancaCardBg from "/assets/img_governanca.png";
 import VideoBg from "/assets/hero-video-wpx.mp4";
-import ContentIllustration from "/assets/content-illustration.svg";
 import { getFourLatestPosts } from "../lib/api";
 import { formatBlogPostDate, getSanityImageURL } from "../utils/helpers";
 
 const seo = {
-  title: "Astro Minimal Starter",
+  title: "WPX ESG",
   description:
-    "This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.",
+    "A WPX está transformando o setor de locação de Máquinas. Descubra como a WPX está liderando a sustentabilidade e responsabilidade social.",
 };
 
 const fourPostsData = await getFourLatestPosts();
@@ -55,22 +54,22 @@ const fourPostsData = await getFourLatestPosts();
                 responsabilidade social
               </p>
               <div class="flex flex-col gap-4 sm:flex-row sm:justify-start">
-                <a
-                  href="#"
-                  class="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
-                  >Baixe nosso Arquivo</a
-                >
+                <!-- <a -->
+                <!--   href="#" -->
+                <!--   class="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base" -->
+                <!--   >Baixe nosso Arquivo</a -->
+                <!-- > -->
                 <a
                   href="/blog"
-                  class="inline-block rounded-lg bg-primaryBlue px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-secondaryBlue focus-visible:ring active:bg-secondaryBlue md:text-base"
+                  class="inline-block rounded-lg bg-white px-8 py-3 text-center text-sm font-semibold text-primaryBlue outline-none transition duration-100 hover:bg-secondaryBlue hover:text-white focus-visible:ring active:bg-secondaryBlue md:text-base"
                   >Veja Nossas Ações</a
                 >
               </div>
             </div>
-            <div class="hidden lg:block w-full xl:px-0 mt-10">
+            <div class="hidden lg:block w-full xl:px-0">
               <img
                 src={HeroIllustration}
-                class="w-50 h-30"
+                class="w-[500px] h-30"
                 alt="Ilustração WPX ESG"
               />
             </div>
@@ -200,7 +199,9 @@ const fourPostsData = await getFourLatestPosts();
         <div
           class="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left"
         >
-          <h1 class="text-5xl font-bold leading-none text-primaryBlue">
+          <h1
+            class="text-3xl lg:text-5xl font-bold leading-none text-primaryBlue"
+          >
             Liderança em Sustentabilidade e Responsabilidade Social na Locação
             de Máquinas.
           </h1>
@@ -287,10 +288,14 @@ const fourPostsData = await getFourLatestPosts();
       </div>
     </section>
     <div class="sm:px-20 sm:py-10">
-      <div class="elfsight-app-fadea555-1a25-4bb6-92ab-0d6dcb42ae03"></div>
+      <iframe
+        src="https://embedsocial.com/api/pro_hashtag/5708359b34fc7dc8fa3bcef081b1e913c7880cb7"
+        width="100%"
+        height="600px"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"></iframe>
     </div>
   </div>
   <Footer />
-  <script is:inline src="https://apps.elfsight.com/p/platform.js" defer
-  ></script>
 </Layout>

@@ -1,16 +1,15 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import type { Props as BaseHeadProps } from '../components/BaseHead.astro';
-
+import type { Props as BaseHeadProps } from "../components/BaseHead.astro";
 
 export interface Props {
-	seo?: BaseHeadProps;
+  seo?: BaseHeadProps;
 }
 
 const { seo } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <BaseHead {...seo} />
     <slot name="head-bottom" />

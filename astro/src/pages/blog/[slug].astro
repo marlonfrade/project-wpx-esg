@@ -31,8 +31,8 @@ const { post } = Astro.props;
 
 const seo = {
   title: post.title,
-  description: post.description,
-  image: getSanityImageURL(post.mainImage).width(1200).url(),
+  description: post.excerpt,
+  image: getSanityImageURL(post.mainImage).url(),
 };
 ---
 

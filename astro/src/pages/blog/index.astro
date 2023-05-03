@@ -10,9 +10,9 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 
 const seo = {
-  title: "Example Blog",
+  title: "Ações WPX",
   description:
-    "This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.",
+    "WPX em Ação: Conheça as Iniciativas Sustentáveis que Estamos Desenvolvendo!Com práticas sustentáveis, a WPX está sempre em ação para cuidar do planeta e construir um futuro melhor.",
 };
 
 const allPostData = await getAllPosts();
@@ -20,7 +20,7 @@ const allPostData = await getAllPosts();
 
 <Layout seo={seo}>
   <Header />
-  <section class="w-full h-full relative">
+  <section class="w-full h-full relative mt-20">
     <img
       src={HeroBackground}
       class="absolute inset-0 object-cover w-full h-full"
