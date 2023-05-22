@@ -15,10 +15,7 @@ const title = Astro.props.title || settings.title;
 const description = Astro.props.excerpt || settings.excerpt;
 const canonicalURL =
   Astro.props.canonicalURL || new URL(Astro.url.pathname, Astro.site);
-const image = new URL(
-  Astro.props.image || "https://esg.wpxlocacao.com.br/public/social.jpeg",
-  Astro.site
-);
+const image = new URL(Astro.props.image || "./social.jpeg", Astro.site);
 ---
 
 <meta charset="utf-8" />

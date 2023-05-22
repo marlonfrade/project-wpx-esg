@@ -10,14 +10,19 @@ import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://wpxlocacao-esg.netlify.app/",
+  site: "https://esg.wpxlocacao.com.br",
   // Your public domain, e.g.: https://my-site.dev/
-  integrations: [sitemap(), sanity({
-    projectId: "xi9z9qtm",
-    dataset: "production",
-    apiVersion: "v2023-04-06",
-    useCdn: true
-  }), tailwind(), preact()],
+  integrations: [
+    sitemap(),
+    sanity({
+      projectId: "xi9z9qtm",
+      dataset: "production",
+      apiVersion: "v2023-04-06",
+      useCdn: true,
+    }),
+    tailwind(),
+    preact(),
+  ],
   output: "static",
-  adapter: netlify()
+  adapter: netlify(),
 });
