@@ -7,15 +7,14 @@ export default defineConfig({
     dashboardTool({
       widgets: [
         netlifyWidget({
-          title: "My Netlify deploys",
+          title: process.env.NETLIFY_WIDGET_TITLE,
           sites: [
             {
               title: "Sanity Studio",
-              apiId: "a3cd5bb2-47f2-462b-ac7a-4493fbe84003",
-              buildHookId:
-                "https://api.netlify.com/build_hooks/643da7cc7e204312ada6f421",
-              name: "wpxlocacao-esg",
-              url: "https://wpxlocacao-esg.netlify.app/",
+              apiId: process.env.NETLIFY_API_ID,
+              buildHookId: process.env.NETLIFY_BUILD_HOOK_ID,
+              name: process.env.NETLIFY_SITE_NAME,
+              url: process.env.NETLIFY_SITE_URL,
             },
           ],
         }),
