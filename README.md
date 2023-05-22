@@ -1,61 +1,51 @@
-# Astro Sanity Minimal Starter
+# 👋 Olá Dev, Bem vindo a WPX ESG!
 
-## [Demo Site](https://astro-sanity-minimal-starter.netlify.app/)
+![GitHub repo size](https://img.shields.io/github/repo-size/marlonfrade/project-wpx-esg?style=for-the-badge)
 
-If you haven't heard about [Astro](https://astro.build) yet you're missing out. This starter repo gives you a blog website with a headless CMS setup using [Sanity.io](https://sanity.io).
+![GitHub language count](https://img.shields.io/github/languages/count/marlonfrade/project-wpx-esg?style=for-the-badge)
 
-Don't be fooled by the simplicity of this starter either. With excellent SEO built in, Astro's excellent developer environment, and performance best practices you're getting one of the best foundations for a personal blog with posts written in markdown. The reason for making such a bare bones starter in terms of styles is that it has what you need out of the box for SEO and site structure but it makes no assumptions about how you want it look and behave. 
+![GitHub forks](https://img.shields.io/github/forks/marlonfrade/project-wpx-esg?style=for-the-badge)
 
-Sometimes starters can feel like they are giving us way too much and you'll spend a day picking apart half of the code to get to the setup you actually wanted. Want to use vanilla CSS instead of Tailwind or Scss? No problem!
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/marlonfrade/project-wpx-esg?style=for-the-badge)
 
-## Features
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/marlonfrade/project-wpx-esg?style=for-the-badge)
 
-- A customizable headless CMS with [Sanity.io](https://sanity.io)
-- Excellent SEO Built In
-  - Open Graph Tags (Twitter, Facebook, etc.)
-  - User Declared Canonical URLs
-  - RSS Feed
-  - XML Sitemap
-  - Robots.txt
-  - JSON LD Schema
-- Extremely minimal styles
-- Performant Google Fonts Setup
+## 🚀 [Visualizar Site](https://esg.wpxlocacao.com.br)
 
-## Get Started
+![social](https://github.com/marlonfrade/project-wpx-esg/assets/84466506/411a721d-9fb5-4ef2-bbd6-7bd0279fe8ef)
 
-Watch my [step-by-step tutorial on YouTube](https://youtu.be/-jAWLTfsSQw)
-
-**Or** 
+> A WPX está transformando o setor de locação de Máquinas. Confira como a WPX está liderando a sustentabilidade e responsabilidade social.
 
 
-Follow the manual steps below:
+# 🗄️ Documentos e Referências do projeto.
 
-### Initial Sanity Setup
+1. [Documentação do Astro](https://docs.astro.build/pt-br/getting-started/)
+2. [Documentação do Sanity](https://www.sanity.io/)
 
-1. [Create a repo from this template](https://github.com/jaydanurwin/astro-sanity-minimal-starter/generate)
-2. If you don't have the Sanity CLI already run `npm install -g @sanity/cli`
-3. Open a terminal from root folder of the project
-4. `cd sanity`
-5. `sanity install`
-6. `sanity init` and follow the prompts (you will need to create a Sanity account if you haven't already)
-8. Navigate to the astro folder
-7. Rename `.env.template` to `.env` and 
-8. Replace the PUBLIC_SANITY_PROJECT_ID value with your token ID
 
-**Note:** You will want to add http://localhost:3000 to your allowed CORS orgins in your Sanity project settings at [https://manage.sanity.io](https://manage.sanity.io)
- 
-### To run your Sanity Studio
+# 👨‍💻 Trabalhando no Projeto
 
-1. Open a terminal located at the sanity folder
-2. `sanity install`
-3. `sanity start`
-4. Your studio should be running on [http://localhost:3333](http://localhost:3333)
-5.  Open [http://localhost:3333](http://localhost:3333) and copy the project ID from the Project info section
+Clone o Projeto:
 
-### To run your Astro site
+```bash
+  git clone https://link-to-project
+```
 
-1.  Open a terminal located at the astro folder
-2.  `npm install`
-3.  `npm start`
-4.  Your Astro site should be running on [http://localhost:3000](http://localhost:3000)
-5.  `npm run build` to build to production locally
+Acesse o diretório que você clonou:
+
+```bash
+  cd my-project
+```
+
+Instale as dependências do projeto:
+
+```bash
+  yarn
+```
+
+Rode o projeto no localhost:
+
+```bash
+  yarn dev
+```
+
