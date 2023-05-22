@@ -12,7 +12,8 @@
 
 ## 🚀 [Visualizar Site](https://esg.wpxlocacao.com.br)
 
-![social](https://github.com/marlonfrade/project-wpx-esg/assets/84466506/411a721d-9fb5-4ef2-bbd6-7bd0279fe8ef)
+![social](https://github.com/marlonfrade/project-wpx-esg/assets/84466506/d051da8d-59c8-4815-8594-a176d872393f)
+
 
 > A WPX está transformando o setor de locação de Máquinas. Confira como a WPX está liderando a sustentabilidade e responsabilidade social.
 
